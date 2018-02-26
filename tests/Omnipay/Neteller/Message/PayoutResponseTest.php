@@ -1,6 +1,7 @@
 <?php
 namespace Omnipay\Neteller\Message;
 
+use Omnipay\Common\Http\ResponseParser;
 use Omnipay\Tests\TestCase;
 
 class PayoutResponseTest extends TestCase
@@ -8,7 +9,7 @@ class PayoutResponseTest extends TestCase
     public function testFailure()
     {
         $httpResponse = $this->getMockHttpResponse('PayoutFailure.txt');
-        $data = $httpResponse->json();
+        $data = ResponseParser::json($httpResponse);
 
         $response = new PayoutResponse($this->getMockRequest(), $data);
 
@@ -26,7 +27,7 @@ class PayoutResponseTest extends TestCase
     public function testSuccess()
     {
         $httpResponse = $this->getMockHttpResponse('PayoutSuccess.txt');
-        $data = $httpResponse->json();
+        $data = ResponseParser::json($httpResponse);
 
         $response = new PayoutResponse($this->getMockRequest(), $data);
 
