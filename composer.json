@@ -12,6 +12,12 @@
   ],
   "homepage": "https://github.com/abdoub/omnipay-neteller",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "abdelilah benhima",
+      "email": "abdelilahbenhima@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Omnipay\\Neteller\\": "src/"
