@@ -1,5 +1,5 @@
 {
-  "name": "AbdouB/omnipay-neteller",
+  "name": "abdoub/omnipay-neteller",
   "type": "library",
   "description": "Neteller driver for the Omnipay version (3.0.x-dev) payment processing library",
   "keywords": [

@@ -1,17 +1,11 @@
-# Omnipay: Neteller
+# Omnipay: Skrill
 
 **Neteller driver for the Omnipay PHP payment processing library**
 
-[![Build Status](https://travis-ci.org/dercoder/omnipay-neteller.svg?branch=master)](https://travis-ci.org/dercoder/omnipay-neteller)
-[![Coverage Status](https://coveralls.io/repos/dercoder/omnipay-neteller/badge.svg?branch=master&service=github)](https://coveralls.io/github/dercoder/omnipay-neteller?branch=master)
-
-[![Latest Stable Version](https://poser.pugx.org/dercoder/omnipay-neteller/v/stable.png)](https://packagist.org/packages/dercoder/omnipay-neteller)
-[![Total Downloads](https://poser.pugx.org/dercoder/omnipay-neteller/downloads.png)](https://packagist.org/packages/dercoder/omnipay-neteller)
-[![Latest Unstable Version](https://poser.pugx.org/dercoder/omnipay-neteller/v/unstable.png)](https://packagist.org/packages/dercoder/omnipay-neteller)
-[![License](https://poser.pugx.org/dercoder/omnipay-neteller/license.png)](https://packagist.org/packages/dercoder/omnipay-neteller)
+**This is a fork of dercoder/omnipay-neteller updated to work with omnipay version 3.0**
 
 [Omnipay](https://github.com/omnipay/omnipay) is a framework agnostic, multi-gateway payment
-processing library for PHP 5.3+. This package implements [Neteller](http://www.neteller.com) support for Omnipay.
+processing library for PHP 5.3+. This package implements Skrill support for Omnipay.
 
 ## Installation
 
@@ -21,7 +15,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "dercoder/omnipay-neteller": "~1.0"
+        "abdoub/omnipay-neteller": "dev-master"
     }
 }
 ```
@@ -50,5 +44,5 @@ If you want to keep up to date with release anouncements, discuss ideas for the 
 or ask more detailed questions, there is also a [mailing list](https://groups.google.com/forum/#!forum/omnipay) which
 you can subscribe to.
 
-If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/dercoder/omnipay-neteller/issues),
+If you believe you have found a bug, please report it using the [GitHub issue tracker](https://github.com/alfaproject/omnipay-skrill/issues),
 or better yet, fork the library and submit a pull request.
