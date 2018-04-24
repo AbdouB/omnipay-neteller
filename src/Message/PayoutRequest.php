@@ -2,9 +2,8 @@
 
 namespace Omnipay\Neteller\Message;
 
-use Guzzle\Http\Exception\BadResponseException;
+use GuzzleHttp\Exception\BadResponseException;
 use Omnipay\Common\Exception\InvalidRequestException;
-use Omnipay\Common\Http\ResponseParser;
 
 /**
  * Neteller Payout Request.
@@ -84,11 +83,12 @@ class PayoutRequest extends AbstractRequest
         $uri = $this->createUri('transferOut');
 
         try {
-            $response = $this->httpClient->post($uri, $headers, json_encode($data));
+            $response = $this->httpClient->request('POST', $uri, $headers, json_encode($data));
         } catch (BadResponseException $e) {
             $response = $e->getResponse();
         }
 
-        return new PayoutResponse($this, ResponseParser::json($response));
+        $jsonResponse = json_decode($response->getBody()->__toString(), true);
+        return new PayoutResponse($this, $jsonResponse);
     }
 }

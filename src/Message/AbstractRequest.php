@@ -2,8 +2,9 @@
 
 namespace Omnipay\Neteller\Message;
 
-use Exception;
-use Omnipay\Common\Http\ResponseParser;
+
+use GuzzleHttp\Exception\BadResponseException;
+
 
 /**
  * Neteller Abstract Request.
@@ -88,10 +89,14 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             'grant_type' => 'client_credentials'
         ));
 
-        $response = $this->httpClient->post($uri, $headers);
-        $json = ResponseParser::json($response);
+        try {
+            $response = $this->httpClient->request('POST', $uri, $headers);
+        } catch (BadResponseException $e) {
+            $response = $e->getResponse();
+        }
+        $jsonResponse = json_decode($response->getBody()->__toString(), true);
 
-        return $json['accessToken'];
+        return $jsonResponse["accessToken"];
     }
 
     /**
